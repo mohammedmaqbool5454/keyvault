@@ -706,7 +706,7 @@
             <button class="qa-q" aria-expanded="false">How does Fingerprint unlock work? Is it as safe as my master password?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
             <div class="qa-a"><div><div class="body">
               <p>With <strong>Fingerprint unlock</strong> on, you can open KeyVault with your fingerprint instead of typing the master password every time. It is not a simple "yes" from the fingerprint sensor: your vault key is wrapped with a biometric-protected key held by Android's secure hardware, so unlocking requires cryptographic proof from the sensor — the same standard as your master password.</p>
-              <p>Changing security settings (including lock settings) asks you to re-authenticate first, and if fingerprint setup fails or is removed, KeyVault falls back to the master password rather than leaving the vault unprotected.</p>
+              <p>Turning Fingerprint unlock on goes through Android's own fingerprint enrollment, and changing your master password always requires the current one. If fingerprint setup fails or is removed, KeyVault falls back to the master password rather than leaving the vault unprotected.</p>
             </div></div></div>
           </div>
 
@@ -736,7 +736,7 @@
           <div class="qa">
             <button class="qa-q" aria-expanded="false">How does Export backup work?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
             <div class="qa-a"><div><div class="body">
-              <p><strong>Export backup</strong> writes your whole vault to a single encrypted backup file, protected by a backup password you set during export. Keep the file somewhere safe — it's the thing you'd restore from if your phone is lost or replaced. Without the backup password, the file can't be opened.</p>
+              <p><strong>Export backup</strong> writes your whole vault to a single encrypted backup file and asks you where to save it. The file is protected by your <strong>master password</strong> — the same encryption as the vault itself — so it can't be opened without that password. There is no separate backup password to set or remember. Keep the file somewhere safe — it's the thing you'd restore from if your phone is lost or replaced.</p>
             </div></div></div>
           </div>
 
@@ -750,7 +750,7 @@
           <div class="qa">
             <button class="qa-q" aria-expanded="false">How does Import backup work?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
             <div class="qa-a"><div><div class="body">
-              <p><strong>Import backup</strong> restores a vault from a backup file you exported earlier. Pick the file, enter its backup password when asked, and your entries are restored. Use it when moving to a new phone or recovering after a reinstall.</p>
+              <p><strong>Import backup</strong> restores your vault from the most recent backup in the <strong>Download/KeyVault</strong> folder. There is no file to pick — the latest backup is found automatically. You enter the master password that backup was made with, and your entries are restored. Use it when moving to a new phone or recovering after a reinstall.</p>
             </div></div></div>
           </div>
 
@@ -779,7 +779,7 @@
           <div class="qa">
             <button class="qa-q" aria-expanded="false">Is my Google Drive backup encrypted? Can Google or Zetro Labs read it?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
             <div class="qa-a"><div><div class="body">
-              <p><strong>Yes, it's encrypted — and no, nobody else can read it.</strong> The backup is encrypted on your phone before anything is uploaded; only ciphertext ever reaches Drive. Google stores the file but can't decrypt it, and Zetro Labs never receives it at all. Your master password (or backup password) is the only way in, exactly as with a local backup file.</p>
+              <p><strong>Yes, it's encrypted — and no, nobody else can read it.</strong> The backup is encrypted on your phone before anything is uploaded; only ciphertext ever reaches Drive. Google stores the file but can't decrypt it, and Zetro Labs never receives it at all. Your master password is the only way in, exactly as with a local backup file.</p>
             </div></div></div>
           </div>
 
