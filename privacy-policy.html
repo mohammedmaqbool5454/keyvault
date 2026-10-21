@@ -496,7 +496,7 @@
         <ul>
           <li><strong>Internet</strong> — used only in Online mode, for the features listed in Section 8.</li>
           <li><strong>Biometric / fingerprint</strong> — only if you enable fingerprint unlock.</li>
-          <li><strong>File access through Android’s system picker</strong> — when you export a backup, import a backup, or import a Chrome password CSV, you choose the file or folder yourself. KeyVault does not browse your storage.</li>
+          <li><strong>File access through Android’s system picker</strong> — when you export a backup or import a Chrome password CSV, you choose the file or folder yourself. KeyVault does not browse your storage. (Importing a backup needs no picker: it restores the most recent backup in your Download/KeyVault folder automatically.)</li>
           <li><strong>Installed apps (read locally only)</strong> — the Add Item “App” picker reads the names and icons of the apps installed on your phone, on the device only, so you can pick one to fill in an entry. Nothing about your installed apps is transmitted, and nothing is stored anywhere outside the entry you create.</li>
         </ul>
         <p>KeyVault does not request access to your contacts, location, camera, microphone, call logs, or messages, and it never will for its core features.</p>
@@ -590,7 +590,7 @@
         <ul>
           <li>Your vault exists on your device. If your device is lost, stolen, damaged, or reset, your vault goes with it unless you have a backup.</li>
           <li>KeyVault offers local backup files, automatic local backup, and optional encrypted backup to your own Google Drive. Using them — and keeping at least one current backup — is your responsibility.</li>
-          <li>Backup files are protected by encryption; keep the password you set for them safe. A backup you cannot decrypt is no backup at all.</li>
+          <li>Backup files are protected by encryption — the same master password that protects your vault; there is no separate backup password. A backup you cannot decrypt is no backup at all.</li>
           <li>Your use of Google Drive is additionally governed by Google’s terms. We are not responsible for the availability or behaviour of Google Drive.</li>
         </ul>
 
@@ -757,7 +757,7 @@
           <details class="faq">
             <summary>Can I unlock with my fingerprint instead of typing?</summary>
             <div class="answer">
-              <p>Yes. Enable fingerprint unlock in Settings → Security. Your vault key is then protected by the Android Keystore and released when Android verifies your fingerprint. Your fingerprint data never reaches KeyVault — Android handles it entirely. You’ll still need your master password in some situations, such as after changing security settings.</p>
+              <p>Yes. Enable fingerprint unlock in Settings → Security. Your vault key is then protected by the Android Keystore and released when Android verifies your fingerprint. Your fingerprint data never reaches KeyVault — Android handles it entirely. Turning fingerprint unlock on goes through Android’s own fingerprint enrollment.</p>
             </div>
           </details>
           <details class="faq">
@@ -767,9 +767,9 @@
             </div>
           </details>
           <details class="faq">
-            <summary>Why do lock-related changes ask me to re-confirm my fingerprint or password?</summary>
+            <summary>Do I have to re-authenticate to change my security settings?</summary>
             <div class="answer">
-              <p>Once app lock is set up, changing lock settings requires re-authenticating with your existing fingerprint or password first. This stops someone with brief access to your unlocked phone from quietly weakening your security settings.</p>
+              <p>No — changing security settings does not ask you to re-authenticate first. Turning fingerprint unlock on goes through Android’s own fingerprint enrollment. The one change that always asks for a password is changing your master password, which requires your current one.</p>
             </div>
           </details>
         </div>
@@ -1098,7 +1098,7 @@
           <details class="faq">
             <summary>How does the Fingerprint setting work?</summary>
             <div class="answer">
-              <p>Turning it on registers your fingerprint unlock through Android, protected by the Android Keystore. Turning it off removes that biometric unlock, and you’ll unlock with your master password. Changing this setting requires re-authentication.</p>
+              <p>Turning it on goes through Android’s own fingerprint enrollment, and your vault key is then protected by the Android Keystore. Turning it off removes that biometric unlock, and you’ll unlock with your master password instead.</p>
             </div>
           </details>
           <details class="faq">
@@ -1127,7 +1127,7 @@
           <details class="faq">
             <summary>What does “Export backup” do?</summary>
             <div class="answer">
-              <p>It writes an encrypted backup file of your entire vault that you can save wherever you like. You’ll set or confirm a password for it — you’ll need that password to import it later. Store the file somewhere safe; without its password it cannot be opened.</p>
+              <p>It writes an encrypted backup file of your entire vault that you can save wherever you like. The file is protected by your master password — the same encryption as the vault itself; there is no separate backup password, and you’ll need your master password to import it later. Store the file somewhere safe; without your master password it cannot be opened.</p>
             </div>
           </details>
           <details class="faq">
@@ -1139,7 +1139,7 @@
           <details class="faq">
             <summary>How do I import a backup?</summary>
             <div class="answer">
-              <p>Settings → Backup → Import backup, choose the backup file with the system file picker, and enter the password you set when you exported it. KeyVault decrypts and restores it on your device.</p>
+              <p>Settings → Backup → Import backup. There is no file to pick: KeyVault restores the most recent backup in your Download/KeyVault folder automatically. Just enter the master password that backup was made with, and KeyVault decrypts and restores it on your device.</p>
             </div>
           </details>
           <details class="faq">
