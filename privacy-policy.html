@@ -498,7 +498,7 @@
           <li><strong>Biometric / fingerprint</strong> — only if you enable fingerprint unlock.</li>
           <li><strong>File access through Android’s system picker</strong> — when you export a backup or import a Chrome password CSV, you choose the file or folder yourself. KeyVault does not browse your storage. (Importing a backup needs no picker: it restores the most recent backup in your Download/KeyVault folder automatically.)</li>
           <li><strong>Installed apps (read locally only)</strong> — the Add Item “App” picker reads the names and icons of the apps installed on your phone, on the device only, so you can pick one to fill in an entry. Nothing about your installed apps is transmitted, and nothing is stored anywhere outside the entry you create.</li>
-          <li><strong>Camera (on-device only, when you tap Scan)</strong> — KeyVault can use your camera for one purpose only: scanning a recovery-kit QR code when you tap 'Scan QR code' on the recovery screen. Scanning happens entirely on your device; no image is stored, transmitted, or seen by Zetro Labs, and the camera is never used at any other time.</li>
+          <li><strong>Camera (on-device only, when you tap Scan)</strong> — KeyVault can use your camera for one purpose only: scanning a QR code when you tap Scan — a recovery-kit code on the recovery screen, or a two-factor (2FA) setup code while adding or editing an entry. Scanning happens entirely on your device; no image is stored, transmitted, or seen by Zetro Labs, and the camera is never used at any other time.</li>
         </ul>
         <p>KeyVault does not request access to your contacts, location, microphone, call logs, or messages, and it never will for its core features.</p>
 
@@ -866,6 +866,18 @@
             <summary>How do I open the website saved with an entry?</summary>
             <div class="answer">
               <p>In the entry’s detail view, the <strong>Website</strong> row has an open button. In Online mode it takes you straight to the site in your browser. In Offline mode, KeyVault first asks whether you want to switch to Online mode, since opening a website needs the internet. This works for passwords and passcodes with a website saved; for a passkey, the open button takes you to the passkey’s domain.</p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>What is the Two-factor (2FA) secret field?</summary>
+            <div class="answer">
+              <p>Many websites offer two-factor authentication (2FA): after your password, they ask for a 6-digit code that changes every 30 seconds (a TOTP code — the kind authenticator apps show). When a site shows you a setup QR code or setup key, save it in the entry’s Two-factor (2FA) secret field: tap Scan to scan the QR code, or type or paste the key — a pasted <code>otpauth://</code> link works too. The secret is stored encrypted inside your vault, exactly like the password. KeyVault then shows the live code in the entry’s detail view and in the Authenticator (the clock button at the top of the Vault tab). Codes are computed on your phone and work fully offline; nothing about 2FA ever leaves your device.</p>
+            </div>
+          </details>
+          <details class="faq">
+            <summary>What is the Authenticator?</summary>
+            <div class="answer">
+              <p>Tap the clock button at the top of the Vault tab to open the Authenticator: a list of every entry that has a 2FA secret, each showing its current 6-digit code and the seconds left before it changes. Tap a row to copy its code — the clipboard clears automatically, just like copied passwords. The list refreshes every second while it is open, and the codes are wiped from the screen the moment you leave the view or the app locks. Because the codes are time-based, keep your phone’s date and time set to automatic — if the clock is off, the codes will not match what the website expects.</p>
             </div>
           </details>
           <details class="faq">
