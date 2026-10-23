@@ -475,6 +475,20 @@
           </div>
 
           <div class="qa">
+            <button class="qa-q" aria-expanded="false">What is the Two-factor (2FA) secret field?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+            <div class="qa-a"><div><div class="body">
+              <p>Many websites offer two-factor authentication (2FA): after your password, they ask for a 6-digit code that changes every 30 seconds (a TOTP code — the kind authenticator apps show). When a site shows you a setup QR code or setup key, save it in the entry's Two-factor (2FA) secret field: tap Scan to scan the QR code, or type or paste the key — a pasted otpauth:// link works too. The secret is stored encrypted inside your vault, exactly like the password. KeyVault then shows the live code in the entry's detail view and in the Authenticator (the clock button at the top of the Vault tab). Codes are computed on your phone and work fully offline; nothing about 2FA ever leaves your device.</p>
+            </div></div></div>
+          </div>
+
+          <div class="qa">
+            <button class="qa-q" aria-expanded="false">What is the Authenticator?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+            <div class="qa-a"><div><div class="body">
+              <p>Tap the clock button at the top of the Vault tab to open the Authenticator: a list of every entry that has a 2FA secret, each showing its current 6-digit code and the seconds left before it changes. Tap a row to copy its code — the clipboard clears automatically, just like copied passwords. The list refreshes every second while it is open, and the codes are wiped from the screen the moment you leave the view or the app locks. Because the codes are time-based, keep your phone's date and time set to automatic — if the clock is off, the codes will not match what the website expects.</p>
+            </div></div></div>
+          </div>
+
+          <div class="qa">
             <button class="qa-q" aria-expanded="false">What can I do in the entry detail view?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
             <div class="qa-a"><div><div class="body">
               <p>Tap any row to open its detail view. From there you can <strong>view</strong> the saved details (with an eye toggle to reveal or hide the secret), <strong>copy</strong> a username or password, <strong>edit</strong> the entry, mark it as a favorite, or <strong>delete</strong> it. Copied secrets are cleared from the clipboard automatically after the time you set in Settings.</p>
